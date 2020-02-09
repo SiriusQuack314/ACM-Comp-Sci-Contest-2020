@@ -2,10 +2,10 @@ import java.io.File;
 import java.math.BigInteger;
 import java.util.Scanner;
 
-public class Wardobe 
+public class Wardrobe 
 {
 	// Returns Factorial of N 
-    static BigInteger factorial(int N) 
+    public static BigInteger factorial(int N) 
     {  
         BigInteger f = new BigInteger("1"); 
 
@@ -17,7 +17,7 @@ public class Wardobe
 
     public static void main(String args[]) throws Exception 
     { 
-        Scanner input = new Scanner(new File("input.dat"));
+        Scanner input = new Scanner(new File("wardrobe.dat"));
         while(input.hasNext())
         {
         	 int x = input.nextInt(); 
