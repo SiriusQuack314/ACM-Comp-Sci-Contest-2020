@@ -31,22 +31,22 @@ public class FrustratingFrustrumsNick
 	{
 		Scanner inputFile = new Scanner(new File("frustratingFrustrums.txt"));
 		double r1 = inputFile.nextDouble();
-		double r2 = inputFile.nextDouble();
+		double R = inputFile.nextDouble();
 		double hTotal = inputFile.nextDouble();
-		double h1 = inputFile.nextDouble();
-		double h2 = inputFile.nextDouble();
+		double hTriplePrime = inputFile.nextDouble();
+		double hPrime = inputFile.nextDouble();
 		
 		//Calculates the angle of the frustrum
-		double theta = Math.atan(hTotal/(r2-r1));
+		double theta = Math.atan(hTotal/(R-r1));
 		//calculates the remaining height other than the two given
-		double h3 = hTotal - h1 - h2;
+		double hDoublePrime = hTotal - h1 - h2;
 		//Calculates the radius of the 2nd circle from the bottom
-		double r3 = (h3+h2)/Math.tan(theta)+r1;
+		double RPrime = (h3+h2)/Math.tan(theta)+r1;
 		//Calculates the radius of the 3rd circle from the bottom
-		double r4 = h3/Math.tan(theta)+r1;
+		double rPrime = h3/Math.tan(theta)+r1;
 		
 		//Output
-		System.out.println(1.0/3*Math.PI*h2*(Math.pow(r3,2)+Math.pow(r4, 2)+r4*r3));
+		System.out.println(1.0/3*Math.PI*hPrime*(Math.pow(RPrime,2)+Math.pow(rPrime, 2)+rPrime*RPrime));
 		
 		//Scanner Closing Statement
 		inputFile.close();
