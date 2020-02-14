@@ -2,7 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class FrustratingFrustrumsNick 
+public class Frustums
 {
 
 	public static void main(String[] args) throws FileNotFoundException 
@@ -14,7 +14,7 @@ public class FrustratingFrustrumsNick
 	
 	public static void methodOne() throws FileNotFoundException
 	{
-		Scanner kb = new Scanner(new File("frustratingFrustrums.txt"));
+		Scanner kb = new Scanner(new File("frustums.txt"));
 		double r1 = kb.nextDouble();
 		double r2 = kb.nextDouble();
 		double h = kb.nextDouble();
@@ -29,7 +29,7 @@ public class FrustratingFrustrumsNick
 	
 	public static void methodTwo() throws FileNotFoundException
 	{
-		Scanner inputFile = new Scanner(new File("frustratingFrustrums.txt"));
+		Scanner inputFile = new Scanner(new File("frustums.txt"));
 		double r1 = inputFile.nextDouble();
 		double R = inputFile.nextDouble();
 		double hTotal = inputFile.nextDouble();
@@ -52,5 +52,4 @@ public class FrustratingFrustrumsNick
 		inputFile.close();
 
 	}
-
 }
