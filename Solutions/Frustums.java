@@ -9,44 +9,46 @@ public class Frustums
 	{
 		//Both of these Methods are suitable for solving this problem, choose your preference
 		methodOne();
-		//methodTwo();
+		methodTwo();
 	}
 	
 	public static void methodOne() throws FileNotFoundException
 	{
-		Scanner kb = new Scanner(new File("frustums.txt"));
+		Scanner kb = new Scanner(new File("frustrums.dat"));
 		double r1 = kb.nextDouble();
-		double r2 = kb.nextDouble();
-		double h = kb.nextDouble();
-		double h1 = kb.nextDouble();
+		double R = kb.nextDouble();
+		double H = kb.nextDouble();
+		double h3 = kb.nextDouble();
 		double h2 = kb.nextDouble();
-		double m = (r2-r1)/h;
-		double r3 = r2-m*h1;
-		double r4 = r3-m*h2;
-		System.out.println(1.0/3*Math.PI*h2*(r3*r3+r4*r4+r4*r3));
+		double m = (R-r1)/H;
+		double r3 = R-m*h3;
+		double r2 = r3-m*h2;
+		System.out.println(1.0/3*Math.PI*h2*(r3*r3+r2*r2+r2*r3));
 		kb.close();
 	}
 	
 	public static void methodTwo() throws FileNotFoundException
 	{
-		Scanner inputFile = new Scanner(new File("frustums.txt"));
+		Scanner inputFile = new Scanner(new File(("frustrums.dat")));
+		
+		//Inputs
 		double r1 = inputFile.nextDouble();
 		double R = inputFile.nextDouble();
-		double hTotal = inputFile.nextDouble();
-		double hTriplePrime = inputFile.nextDouble();
-		double hPrime = inputFile.nextDouble();
+		double H = inputFile.nextDouble();
+		double h3 = inputFile.nextDouble();
+		double h2 = inputFile.nextDouble();
 		
 		//Calculates the angle of the frustrum
-		double theta = Math.atan(hTotal/(R-r1));
+		double theta = Math.atan(H/(R-r1));
 		//calculates the remaining height other than the two given
-		double hDoublePrime = hTotal - h1 - h2;
+		double h1 = H - h3 - h2;
 		//Calculates the radius of the 2nd circle from the bottom
-		double RPrime = (h3+h2)/Math.tan(theta)+r1;
+		double r3 = (h1+h2)/Math.tan(theta)+r1;
 		//Calculates the radius of the 3rd circle from the bottom
-		double rPrime = h3/Math.tan(theta)+r1;
+		double r2 = h1/Math.tan(theta)+r1;
 		
 		//Output
-		System.out.println(1.0/3*Math.PI*hPrime*(Math.pow(RPrime,2)+Math.pow(rPrime, 2)+rPrime*RPrime));
+		System.out.println(1.0/3*Math.PI*h2*(Math.pow(r3,2)+Math.pow(r2, 2)+r2*r3));
 		
 		//Scanner Closing Statement
 		inputFile.close();
