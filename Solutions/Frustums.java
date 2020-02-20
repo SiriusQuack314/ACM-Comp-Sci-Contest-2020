@@ -8,13 +8,13 @@ public class Frustums
 	public static void main(String[] args) throws FileNotFoundException 
 	{
 		//Both of these Methods are suitable for solving this problem, choose your preference
-		methodOne();
+		//methodOne();
 		methodTwo();
 	}
 	
 	public static void methodOne() throws FileNotFoundException
 	{
-		Scanner kb = new Scanner(new File("frustrums.dat"));
+		Scanner kb = new Scanner(new File("frustums.dat"));
 		double r1 = kb.nextDouble();
 		double R = kb.nextDouble();
 		double H = kb.nextDouble();
