@@ -10,7 +10,7 @@ public class HighLaysMan
 	
 	public static void flood(int x, int y, int life)
 	{
-		if(life == 0 || x < 0 || y < 0 || x >= grid.length || y >= grid[0].length)
+		if(life == -1 || x < 0 || y < 0 || x >= grid.length || y >= grid[0].length)
 		{
 			return;
 		}
@@ -42,6 +42,7 @@ public class HighLaysMan
 			
 			//every bag of chips on the board, saved
 			ArrayList<Point> bags = new ArrayList<Point>();
+			
 			for(int i = 0; i<n; i++)
 			{
 				String line = read.nextLine().trim();
@@ -52,15 +53,23 @@ public class HighLaysMan
 						x = i;
 						y = j;
 					}
-					if(line.charAt(j) == 'L')
+					if(line.charAt(j) == 'L') //add to bags
 					{
 						bags.add(new Point(i, j));
 					}
 					grid[i][j] = line.charAt(j);
 				}
 			}
-			processBags(bags); //change all bags to barriers
-			flood(x, y, 9999); //floodfill
+			
+			//process each bag by converting to barriers
+			for(Point p : bags)
+			{
+				int r = p.x;
+				int c = p.y;
+				flood(r, c, 2); //the number 2 is used because you cannot travel within two cells of a bag
+			}
+			
+			flood(x, y, 9999); //floodfill, using an arbitrarily high life counter
 			
 			//if the grid still contains the character 'E', the answer is no, because the flood didn't reach it
 			boolean reach = true;
