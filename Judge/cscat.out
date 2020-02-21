@@ -1,0 +1,58 @@
+Jeff, CS: D
+-:3
+Jeff, CS: A
+=====
+Bob, CS: D
+Dave, CS: D
+-:3
+Bob, CS: C
+Dave, CS: D
+=====
+Dave, CS: D
+Bob, CS: D
+-:3
+Dave, CS: B
+Bob, CS: D
+=====
+Bob, CS: D
+Jeff, CS: D
+Dave, CS: D
+Gavin, Science: F
+-:3
+Bob, CS: C
+Jeff, CS: A
+Dave, CS: B
+Gavin, Science: F
+=====
+Bob, CS: D
+Jeff, CS: D
+Dave, CS: D
+-:3
+Bob, CS: C
+Jeff, CS: A
+Dave, CS: B
+=====
+Bob, CS: D
+Jeff, CS: D
+Dave, CS: D
+Gavin, Science: F
+Brandon, History: A
+-:3
+Bob, CS: C
+Jeff, CS: A
+Dave, CS: B
+Gavin, Science: A
+Brandon, History: A
+=====
+Jeff, CS: D
+Dave, CS: D
+Bob, Math: D
+Gavin, Science: F
+Brandon, History: A
+-:3
+Jeff, CS: A
+Dave, CS: B
+Bob, Math: C
+Gavin, Science: A
+Brandon, History: A
+=====
