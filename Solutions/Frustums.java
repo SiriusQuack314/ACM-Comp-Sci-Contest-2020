@@ -29,7 +29,7 @@ public class Frustums
 	
 	public static void methodTwo() throws FileNotFoundException
 	{
-		Scanner inputFile = new Scanner(new File(("frustrums.dat")));
+		Scanner inputFile = new Scanner(new File(("frustums.dat")));
 		
 		//Inputs
 		double r1 = inputFile.nextDouble();
