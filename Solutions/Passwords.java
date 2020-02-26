@@ -105,12 +105,10 @@ public class Passwords
 			{
 				String s = read.next();
 				int correct = 0;
-				int total = 0;
 				
 				//check each existing filter for correctness
 				if(cap != null)
 				{
-					total++;
 					if(cap == capital(s))
 					{
 						correct++;
@@ -119,7 +117,6 @@ public class Passwords
 				
 				if(low != null)
 				{
-					total++;
 					if(low == lowercase(s))
 					{
 						correct++;
@@ -128,7 +125,6 @@ public class Passwords
 				
 				if(num != null)
 				{
-					total++;
 					if(num == number(s))
 					{
 						correct++;
@@ -137,7 +133,6 @@ public class Passwords
 				
 				for(String spec : special.keySet())
 				{
-					total++;
 					if(s.contains(spec) == special.get(spec))
 					{
 						correct++;
@@ -146,7 +141,6 @@ public class Passwords
 				
 				if(lengthNum != -1)
 				{
-					total++;
 					switch(lengthStyle)
 					{
 					case "<": if(s.length() <= lengthNum) correct++; break;
@@ -157,9 +151,12 @@ public class Passwords
 				
 				for(String[] cons : consecutive.keySet())
 				{
-					total++;
 					String s1 = cons[0];
 					String s2 = cons[1];
+					if(!s.contains(s1))
+					{
+						continue;
+					}
 					boolean b = consecutive.get(cons);
 					if(b == consecutiveFollow(s, s1, s2))
 					{
@@ -169,9 +166,12 @@ public class Passwords
 				
 				for(String[] sub : subsequent.keySet())
 				{
-					total++;
 					String s1 = sub[0];
 					String s2 = sub[1];
+					if(!s.contains(s1))
+					{
+						continue;
+					}
 					boolean b = subsequent.get(sub);
 					if(b == subsequentFollow(s, s1, s2))
 					{
@@ -179,7 +179,7 @@ public class Passwords
 					}
 				}
 				
-				double strength = 100.0*correct/total;
+				double strength = 100.0*correct/k;
 				if(strength == 0)
 				{
 					System.out.println(s+": Abysmal");
